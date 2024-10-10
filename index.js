@@ -1,5 +1,5 @@
 import { getUsername } from "./src/helpers/getUsername.js";
-import { getCurrentDirectory } from "./src/helpers/getCurrentDirectory.js";
+import { currentDirectory } from "./src/helpers/getCurrentDirectory.js";
 import { greeting } from "./src/helpers/getGreetingText.js";
 import { goodbye } from "./src/helpers/getGoodbyeText.js";
 
@@ -10,12 +10,12 @@ const app = () => {
 
   const username = getUsername();
 
-  getCurrentDirectory();
+  currentDirectory();
 
   greeting(username);
 
   stdin.on("data", (chunk) => {
-    getCurrentDirectory();
+    currentDirectory();
 
     const input = chunk.trim();
 

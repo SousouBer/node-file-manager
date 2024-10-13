@@ -7,8 +7,9 @@ import errorMessages from "./errorMessages.js";
 import { stdout } from "node:process";
 import { cat } from "./operations/cat.js";
 import { add } from "./operations/add.js";
+import { rn } from "./operations/rn.js";
 
-export const operation = (input) => {
+export const operation = async (input) => {
   const [command, ...args] = input.split(" ");
 
   if (!commandsList.includes(command)) {
@@ -32,6 +33,9 @@ export const operation = (input) => {
         break;
       case "add":
         add(args);
+        break;
+      case "rn":
+        await rn(args);
         break;
     }
   } catch {

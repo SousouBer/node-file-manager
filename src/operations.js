@@ -12,6 +12,7 @@ import { cp } from "./operations/cp.js";
 import { mv } from "./operations/mv.js";
 import { rm } from "./operations/rm.js";
 import { os } from "./operations/os.js";
+import { hash } from "./operations/hash.js";
 
 export const operation = async (input) => {
   const [command, ...args] = input.split(" ");
@@ -52,6 +53,9 @@ export const operation = async (input) => {
         break;
       case "os":
         os(args);
+        break;
+      case "hash":
+        await hash(args);
         break;
     }
   } catch {

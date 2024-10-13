@@ -8,4 +8,5 @@ export const commandsList = [
   "mv",
   "rm",
   "os",
+  "hash",
 ];

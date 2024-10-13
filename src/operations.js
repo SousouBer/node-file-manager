@@ -11,6 +11,7 @@ import { rn } from "./operations/rn.js";
 import { cp } from "./operations/cp.js";
 import { mv } from "./operations/mv.js";
 import { rm } from "./operations/rm.js";
+import { os } from "./operations/os.js";
 
 export const operation = async (input) => {
   const [command, ...args] = input.split(" ");
@@ -48,6 +49,9 @@ export const operation = async (input) => {
         break;
       case "rm":
         rm(args);
+        break;
+      case "os":
+        os(args);
         break;
     }
   } catch {

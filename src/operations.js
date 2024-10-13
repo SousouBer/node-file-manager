@@ -8,6 +8,7 @@ import { stdout } from "node:process";
 import { cat } from "./operations/cat.js";
 import { add } from "./operations/add.js";
 import { rn } from "./operations/rn.js";
+import { cp } from "./operations/cp.js";
 
 export const operation = async (input) => {
   const [command, ...args] = input.split(" ");
@@ -36,6 +37,9 @@ export const operation = async (input) => {
         break;
       case "rn":
         await rn(args);
+        break;
+      case "cp":
+        cp(args);
         break;
     }
   } catch {

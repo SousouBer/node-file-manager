@@ -6,6 +6,7 @@ import { commandsList } from "./commandsList.js";
 import errorMessages from "./errorMessages.js";
 import { stdout } from "node:process";
 import { cat } from "./operations/cat.js";
+import { add } from "./operations/add.js";
 
 export const operation = (input) => {
   const [command, ...args] = input.split(" ");
@@ -28,6 +29,9 @@ export const operation = (input) => {
         break;
       case "cat":
         cat(...args);
+        break;
+      case "add":
+        add(args);
         break;
     }
   } catch {

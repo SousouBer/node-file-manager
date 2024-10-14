@@ -5,8 +5,6 @@ import { currentDirectory } from "./src/helpers/getCurrentDirectory.js";
 import { greeting } from "./src/helpers/getGreetingText.js";
 import { goodbye } from "./src/helpers/getGoodbyeText.js";
 
-import { up } from "./src/operations/up.js";
-import { cd } from "./src/operations/cd.js";
 import { operation } from "./src/operations.js";
 
 const app = () => {
@@ -19,8 +17,6 @@ const app = () => {
   greeting(username);
 
   stdin.on("data", (chunk) => {
-    // currentDirectory();
-
     const input = chunk.trim();
 
     if (input === ".exit") {
@@ -29,13 +25,6 @@ const app = () => {
       process.exit(0);
     }
 
-    // const [command, ...args] = input.split(" ");
-
-    // if (command === "cd") {
-    //   cd(...args);
-    //   currentDirectory();
-    // }
-    // console.log("inp: ", command, args);
     operation(input);
   });
 

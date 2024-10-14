@@ -8,6 +8,13 @@ import { stdout } from "node:process";
 import { cat } from "./operations/cat.js";
 import { add } from "./operations/add.js";
 import { rn } from "./operations/rn.js";
+import { cp } from "./operations/cp.js";
+import { mv } from "./operations/mv.js";
+import { rm } from "./operations/rm.js";
+import { os } from "./operations/os.js";
+import { hash } from "./operations/hash.js";
+import { compress } from "./operations/compress.js";
+import { decompress } from "./operations/decompress.js";
 
 export const operation = async (input) => {
   const [command, ...args] = input.split(" ");
@@ -36,6 +43,27 @@ export const operation = async (input) => {
         break;
       case "rn":
         await rn(args);
+        break;
+      case "cp":
+        cp(args);
+        break;
+      case "mv":
+        mv(args);
+        break;
+      case "rm":
+        rm(args);
+        break;
+      case "os":
+        os(args);
+        break;
+      case "hash":
+        await hash(args);
+        break;
+      case "compress":
+        compress(args);
+        break;
+      case "decompress":
+        decompress(args);
         break;
     }
   } catch {

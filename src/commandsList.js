@@ -9,4 +9,6 @@ export const commandsList = [
   "rm",
   "os",
   "hash",
+  "compress",
+  "decompress",
 ];

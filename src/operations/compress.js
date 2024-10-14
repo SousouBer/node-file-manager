@@ -12,10 +12,7 @@ export const compress = (args) => {
 
   const destinationPathResolve = path.resolve(
     destinationPath,
-    path.basename(
-      pathToFileToCompressResolve,
-      path.extname(pathToFileToCompressResolve)
-    ) + ".br"
+    path.basename(pathToFileToCompressResolve) + ".br"
   );
 
   if (

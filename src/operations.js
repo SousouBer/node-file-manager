@@ -14,6 +14,7 @@ import { rm } from "./operations/rm.js";
 import { os } from "./operations/os.js";
 import { hash } from "./operations/hash.js";
 import { compress } from "./operations/compress.js";
+import { decompress } from "./operations/decompress.js";
 
 export const operation = async (input) => {
   const [command, ...args] = input.split(" ");
@@ -60,6 +61,9 @@ export const operation = async (input) => {
         break;
       case "compress":
         compress(args);
+        break;
+      case "decompress":
+        decompress(args);
         break;
     }
   } catch {
